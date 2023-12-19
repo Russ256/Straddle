@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "28f4c0a0-757b-4d31-8449-581daf742b56",
+		"name": "Straddle.Payments.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1848319"
+	},
+	"item": [
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "cancel",
+							"item": [
+								{
+									"name": "Cancel Payment",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Payment/:id/cancel",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Payment",
+												":id",
+												"cancel"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "344cecb8-7d9b-41bb-9656-98a61478e3c3",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/Payment/:id/cancel",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"Payment",
+														":id",
+														"cancel"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"status\": \"<string>\",\n  \"amount\": \"<double>\"\n}"
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/Payment/:id/cancel",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"Payment",
+														":id",
+														"cancel"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get Payment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Payment/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Payment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "dee95b1a-96dd-4781-8f65-16d81e7be7c7",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Payment/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Payment",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"status\": \"<string>\",\n  \"amount\": \"<double>\"\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Payment/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Payment",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Create Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\" : 55.24,\r\n    \"fromAccount\" : \"1234\",\r\n    \"toAccount\" : \"5678\",\r\n    \"reference\" : \"payment 1\",\r\n    \"date\" : \"2023-12-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Payment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Accepted",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Payment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Payment"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "useBrowser",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "clientSecret",
+				"value": "dGS8Q~og9TxJejUhwsdSqQFGsJwSqnCRvWmWwbCx",
+				"type": "string"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "http://localhost:5113/signin-oidc",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "api://739c5a1f-354e-4676-b22d-24235f12e026/access_as_user",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "739c5a1f-354e-4676-b22d-24235f12e026",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code_with_pkce",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "default",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7033"
+		}
+	]
+}

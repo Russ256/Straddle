@@ -1,0 +1,6 @@
+@Straddle.Payments.Api_HostAddress = http://localhost:5113
+
+GET {{Straddle.Payments.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

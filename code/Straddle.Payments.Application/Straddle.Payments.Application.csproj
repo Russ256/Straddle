@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Straddle.Payments.Application.Abstractions\Straddle.Payments.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\Straddle.Payments.Domain\Straddle.Payments.Domain.csproj" />
+    <ProjectReference Include="..\Straddle.Sdk.Application\Straddle.Sdk.Application.csproj" />
+    <ProjectReference Include="..\Straddle.Sdk\Straddle.Sdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
